@@ -63,8 +63,8 @@ def get_user_info(user_id: str) -> UserData:
     return get_user_data(user_id)
 
 
-# @app.post("/api/add-steps/{user_id}")
-# def add(user_id: str, data: Steps) -> UserData:
-#     get_user_data(user_id)
-#     users[user_id]['stepsCounter'] += data.steps
-#     return users[user_id] | CONST_DATA
+@app.post("/api/add-steps/{user_id}")
+def add(user_id: str, data: Steps) -> UserData:
+    get_user_data(user_id)
+    users[user_id]['stepsCounter'] += data.steps
+    return users[user_id] | CONST_DATA
